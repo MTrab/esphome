@@ -2,8 +2,30 @@ substitutions:
   board: d1_mini
   log_level: INFO
 
+esphome:
+  friendly_name: ${device_verbose_name}
+  name: ${node_name}
+  name_add_mac_suffix: true
+  project:
+    name: mtrab.kamstrup_reader
+    version: "1.0"
+
 esp8266:
   board: ${board}
+
+wifi:
+  ap:
+
+captive_portal:
+
+api:
+
+ota:
+  platform: esphome
+
+dashboard_import:
+  package_import_url: github://mtrab/esphome/kamstrup_reader/board_esp8266.yaml@main
+  import_full_config: false
 
 logger:
   level: ${log_level}
